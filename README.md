@@ -26,6 +26,6 @@ git clone https://github.com/vijay-khanna/content-kafka-deep-dive.git
 
 cd content-kafka-deep-dive/
 
-docker-compose up
+docker-compose up -d --build
 
 ```
