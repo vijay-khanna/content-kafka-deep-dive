@@ -29,3 +29,21 @@ cd content-kafka-deep-dive/
 docker-compose up -d --build
 
 ```
+
+Test the Kafka Topic
+
+```
+# Download the Kafka client, and untar the same. 
+export kafka_ip=<Machine IP>
+
+./bin/kafka-topics.sh --zookeeper $kafka_ip:2181 --create --topic test --replication-factor 1 --partitions 1
+
+./bin/kafka-topics.sh --zookeeper $kafka_ip:2181  --topic test --describe
+
+
+./bin/kafka-console-consumer.sh --topic test --bootstrap-server $kafka_ip:9092 --from-beginning 
+
+./bin/kafka-console-producer.sh --topic test --bootstrap-server $kafka_ip:9092 
+
+
+```
